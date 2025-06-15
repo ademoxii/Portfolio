@@ -8,6 +8,7 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 #easter-egg-text {
     position: fixed;
     top: 50%;
@@ -172,6 +173,7 @@
         transform: scale(0);
     }
 }
+
 @media (max-width: 768px) {
     #easter-egg-text {
         font-size: 32px;
@@ -179,6 +181,7 @@
         letter-spacing: 2px;
     }
 }
+
 @media (max-width: 480px) {
     #easter-egg-text {
         font-size: 24px;
@@ -186,11 +189,14 @@
         letter-spacing: 1px;
     }
 }
+
+
 .cv-download-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
+
 .cv-download-btn {
     display: flex;
     align-items: center;
@@ -610,8 +616,7 @@
             position: relative;
             overflow-x: hidden;
         }
-        
-        /* Animated Background */
+       
         .particles-container {
             position: fixed;
             top: 0;
@@ -670,7 +675,6 @@
                 opacity: 0.9;
             }
         }
-    
         .orb {
             position: absolute;
             border-radius: 50%;
@@ -712,6 +716,7 @@
                 transform: rotate(360deg) translateX(50px) rotate(-360deg);
             }
         }
+
         .morph-shape {
             position: absolute;
             width: 200px;
@@ -884,7 +889,7 @@
             font-size: 30px;
         }
         
-    
+       
         .typing-name {
             display: inline-block;
             overflow: hidden;
@@ -1316,6 +1321,7 @@
                 text-align: center;
                 padding: 30px 20px;
             }
+            
     
             .particle:nth-child(n+15) {
                 display: none;
@@ -1328,10 +1334,10 @@
     </style>
 </head>
 <body>
-  
+    <!-- Animated Background -->
     <div class="particles-container" id="particles"></div>
     
-  
+    <!-- Morphing Shapes -->
     <div class="morph-shape shape1"></div>
     <div class="morph-shape shape2"></div>
     
@@ -1339,7 +1345,7 @@
     
     <div class="container">
     <div id="easter-egg-text" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; color: #4facfe; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;"></div>
-      
+        <!-- Hero Section -->
         <div class="hero-section">
             <div class="hero-text">
                 <div class="greeting">Hello, world!</div>
@@ -1353,7 +1359,7 @@
         </div>
 
         <div class="left-column">
-       
+            <!-- Who am I Section -->
             <div class="section">
                 <h2 class="section-title">Who am I ?</h2>
                 <div class="about-text">
@@ -1362,7 +1368,7 @@
                 </div>
             </div>
 
-          
+            <!-- Skills Section -->
             <div class="section">
                 <h2 class="section-title">Skills</h2>
                 <div class="skills-grid">
@@ -1380,7 +1386,7 @@
                     </div>
                 </div>
             </div>
-           
+            <!-- Foundational Technical Knowledge Section -->
 <div class="section">
     <h2 class="section-title">Foundational Technical Knowledge</h2>
     <div class="foundational-grid">
@@ -1402,7 +1408,7 @@
         </div>
     </div>
 </div>
-
+<!-- Education Section -->
 <div class="section">
     <h2 class="section-title">Education</h2>
     <div class="experience-list">
@@ -1423,7 +1429,7 @@
     </div>
 </div>
 
-
+<!-- Languages Section -->
 <div class="section">
     <h2 class="section-title">Languages</h2>
     <div class="languages-list">
@@ -1477,7 +1483,7 @@
 
         <div class="right-column">
 
-         
+            <!-- Experience Section -->
             <div class="section">
                 <h2 class="section-title">Experience</h2>
                 <div class="experience-list">
@@ -1485,6 +1491,7 @@
                         <div class="category-icon"><img src="figma.png" alt="UI/UX Designer" height="40px"></div>
                         <div class="experience-item">MP - ETIC (Mini Project)</div>
                         <div class="experience-item">ESMS - CSE CLUB</div>
+                        <div class="experience-item">TEST.INI - TO DO LIST</div>
                         <div class="experience-item">HACKTIC - ETIC HACKATHON</div>
                         <div class="experience-item">SingIt - CACE EVENT</div>
                         <div class="experience-item">ESI+ - TEO PROJECT</div>
@@ -1506,7 +1513,7 @@
                     </div>
                 </div>
             </div>
-          
+            <!-- CV Download Section -->
                 <div class="section">
                 <h2 class="section-title">C.V.</h2>
                 <div class="cv-download-container">
@@ -1531,7 +1538,7 @@
              </a>
               </div>
                 </div>
-               
+                <!-- Departments Section -->
 <div class="section">
     <h2 class="section-title">Departments</h2>
     <div class="experience-list">
@@ -1553,7 +1560,8 @@
 </div>
 
         </div>
-
+        
+<!-- Footer Section -->
 <div class="footer-section">
     <div class="footer-content">
         <div class="footer-main">
@@ -1586,7 +1594,7 @@
     
 
     <script>
-       
+        // Mouse trail effect
         let mouseTrail = [];
         const maxTrailLength = 10;
         
@@ -1619,7 +1627,7 @@
             }, 1000);
         }
         
-      
+        // Add CSS for mouse trail animation
         const trailStyle = document.createElement('style');
         trailStyle.textContent = `
             @keyframes fadeTrail {
@@ -1629,42 +1637,43 @@
         `;
         document.head.appendChild(trailStyle);
 
-  
+        // Particle System
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const numParticles = window.innerWidth < 768 ? 15 : 25;
             
-          
+            // Create floating orbs
             for (let i = 0; i < 3; i++) {
                 const orb = document.createElement('div');
                 orb.className = `orb orb${i + 1}`;
                 particlesContainer.appendChild(orb);
             }
-
+            
+            // Create particles
             for (let i = 0; i < numParticles; i++) {
                 const particle = document.createElement('div');
                 
-              
+                // Random size
                 const sizes = ['small', 'medium', 'large'];
                 const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
                 particle.className = `particle ${randomSize}`;
                 
-               
+                // Random position
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
                 
-           
-                
+                // Random animation delay
                 particle.style.animationDelay = Math.random() * 8 + 's';
                 
-            
+                // Random animation duration variation
                 const baseDuration = randomSize === 'small' ? 8 : randomSize === 'medium' ? 12 : 15;
                 particle.style.animationDuration = (baseDuration + Math.random() * 4) + 's';
                 
                 particlesContainer.appendChild(particle);
             }
         }
-    
+        
+        // Parallax effect for particles
         function addParallaxEffect() {
             const particles = document.querySelectorAll('.particle');
             const orbs = document.querySelectorAll('.orb');
@@ -1684,7 +1693,8 @@
                 });
             });
         }
-   
+        
+        // Mouse interaction with particles
         function addMouseInteraction() {
             const particles = document.querySelectorAll('.particle');
             
@@ -1692,7 +1702,7 @@
                 const mouseX = e.clientX / window.innerWidth;
                 const mouseY = e.clientY / window.innerHeight;
                 
-           
+                // Create mouse trail
                 if (Math.random() > 0.7) {
                     createMouseTrail(e);
                 }
@@ -1707,8 +1717,9 @@
             });
         }
         
+        // Original interaction effects
         document.addEventListener('DOMContentLoaded', function() {
-         
+            // Create particles
             createParticles();
             addMouseInteraction();
             addParallaxEffect();
@@ -1725,19 +1736,20 @@ const easterEggs = {
 };
 
 document.addEventListener('keydown', function(e) {
-
+    // Only capture letters and numbers
     if (e.key.length === 1 && e.key.match(/[a-zA-Z0-9]/)) {
         typedText += e.key.toLowerCase();
         
-      
+        // Keep only last 10 characters to prevent memory issues
         if (typedText.length > 10) {
             typedText = typedText.slice(-10);
         }
-  
+        
+        // Check for easter eggs
         for (let trigger in easterEggs) {
             if (typedText.includes(trigger)) {
                 showEasterEgg(easterEggs[trigger]);
-                typedText = ''; 
+                typedText = ''; // Reset after showing
                 break;
             }
         }
@@ -1748,13 +1760,14 @@ function showEasterEgg(text) {
     const easterEggElement = document.getElementById('easter-egg-text');
     easterEggElement.textContent = text;
     easterEggElement.style.opacity = '1';
-
+    
+    // Hide after 3 seconds
     setTimeout(() => {
         easterEggElement.style.opacity = '0';
     }, 3000);
 }
             
-          
+            // Add click effects to skill cards
             skillCards.forEach(card => {
                 card.addEventListener('click', function() {
                     this.style.transform = 'scale(0.95)';
@@ -1764,8 +1777,9 @@ function showEasterEgg(text) {
                 });
             });
             
+            // Add hover effects to experience items and subtitles
             experienceItems.forEach(item => {
-                
+                // Check if this item has a subtitle
                 const nextElement = item.nextElementSibling;
                 const hasSubtitle = nextElement && nextElement.classList.contains('experience-subtitle');
                 
@@ -1776,7 +1790,7 @@ function showEasterEgg(text) {
                 
                 item.addEventListener('mouseenter', function() {
                     if (hasSubtitle) {
-                       
+                        // Create unified background for title and subtitle
                         this.style.background = 'rgba(255, 255, 255, 0.05)';
                         this.style.borderRadius = '8px 8px 0px 8px';
                         this.style.padding = '8px 15px';
@@ -1808,14 +1822,14 @@ function showEasterEgg(text) {
                 });
             });
             
-        
+            // Add hover effects to experience subtitles
             const experienceSubtitles = document.querySelectorAll('.experience-subtitle');
             experienceSubtitles.forEach(subtitle => {
                 const prevElement = subtitle.previousElementSibling;
                 
                 subtitle.addEventListener('mouseenter', function() {
                     if (prevElement && prevElement.classList.contains('experience-item')) {
-                        
+                        // Create unified background for title and subtitle
                         prevElement.style.background = 'rgba(255, 255, 255, 0.05)';
                         prevElement.style.borderRadius = '8px 8px 0px 8px';
                         prevElement.style.padding = '8px 15px';
@@ -1844,7 +1858,7 @@ function showEasterEgg(text) {
             });
         });
         
-       
+        // Recreate particles on window resize
         window.addEventListener('resize', () => {
             const particlesContainer = document.getElementById('particles');
             particlesContainer.innerHTML = '';
