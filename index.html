@@ -1359,7 +1359,6 @@
         </div>
 
         <div class="left-column">
-            <!-- Who am I Section -->
             <div class="section">
                 <h2 class="section-title">Who am I ?</h2>
                 <div class="about-text">
@@ -1594,7 +1593,7 @@
     
 
     <script>
-        // Mouse trail effect
+
         let mouseTrail = [];
         const maxTrailLength = 10;
         
@@ -1627,7 +1626,7 @@
             }, 1000);
         }
         
-        // Add CSS for mouse trail animation
+   
         const trailStyle = document.createElement('style');
         trailStyle.textContent = `
             @keyframes fadeTrail {
@@ -1637,35 +1636,32 @@
         `;
         document.head.appendChild(trailStyle);
 
-        // Particle System
+    
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const numParticles = window.innerWidth < 768 ? 15 : 25;
             
-            // Create floating orbs
+
             for (let i = 0; i < 3; i++) {
                 const orb = document.createElement('div');
                 orb.className = `orb orb${i + 1}`;
                 particlesContainer.appendChild(orb);
             }
-            
-            // Create particles
+    
             for (let i = 0; i < numParticles; i++) {
                 const particle = document.createElement('div');
                 
-                // Random size
+          
                 const sizes = ['small', 'medium', 'large'];
                 const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
                 particle.className = `particle ${randomSize}`;
                 
-                // Random position
+       
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
-                
-                // Random animation delay
+        
                 particle.style.animationDelay = Math.random() * 8 + 's';
-                
-                // Random animation duration variation
+        
                 const baseDuration = randomSize === 'small' ? 8 : randomSize === 'medium' ? 12 : 15;
                 particle.style.animationDuration = (baseDuration + Math.random() * 4) + 's';
                 
@@ -1673,7 +1669,7 @@
             }
         }
         
-        // Parallax effect for particles
+    
         function addParallaxEffect() {
             const particles = document.querySelectorAll('.particle');
             const orbs = document.querySelectorAll('.orb');
@@ -1694,15 +1690,13 @@
             });
         }
         
-        // Mouse interaction with particles
         function addMouseInteraction() {
             const particles = document.querySelectorAll('.particle');
             
             document.addEventListener('mousemove', (e) => {
                 const mouseX = e.clientX / window.innerWidth;
                 const mouseY = e.clientY / window.innerHeight;
-                
-                // Create mouse trail
+    
                 if (Math.random() > 0.7) {
                     createMouseTrail(e);
                 }
@@ -1716,10 +1710,9 @@
                 });
             });
         }
-        
-        // Original interaction effects
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Create particles
+        
             createParticles();
             addMouseInteraction();
             addParallaxEffect();
@@ -1736,20 +1729,20 @@ const easterEggs = {
 };
 
 document.addEventListener('keydown', function(e) {
-    // Only capture letters and numbers
+ 
     if (e.key.length === 1 && e.key.match(/[a-zA-Z0-9]/)) {
         typedText += e.key.toLowerCase();
         
-        // Keep only last 10 characters to prevent memory issues
+     
         if (typedText.length > 10) {
             typedText = typedText.slice(-10);
         }
         
-        // Check for easter eggs
+       
         for (let trigger in easterEggs) {
             if (typedText.includes(trigger)) {
                 showEasterEgg(easterEggs[trigger]);
-                typedText = ''; // Reset after showing
+                typedText = '';
                 break;
             }
         }
@@ -1761,13 +1754,13 @@ function showEasterEgg(text) {
     easterEggElement.textContent = text;
     easterEggElement.style.opacity = '1';
     
-    // Hide after 3 seconds
+ 
     setTimeout(() => {
         easterEggElement.style.opacity = '0';
     }, 3000);
 }
             
-            // Add click effects to skill cards
+           
             skillCards.forEach(card => {
                 card.addEventListener('click', function() {
                     this.style.transform = 'scale(0.95)';
@@ -1777,9 +1770,9 @@ function showEasterEgg(text) {
                 });
             });
             
-            // Add hover effects to experience items and subtitles
+            
             experienceItems.forEach(item => {
-                // Check if this item has a subtitle
+               
                 const nextElement = item.nextElementSibling;
                 const hasSubtitle = nextElement && nextElement.classList.contains('experience-subtitle');
                 
@@ -1790,7 +1783,7 @@ function showEasterEgg(text) {
                 
                 item.addEventListener('mouseenter', function() {
                     if (hasSubtitle) {
-                        // Create unified background for title and subtitle
+              
                         this.style.background = 'rgba(255, 255, 255, 0.05)';
                         this.style.borderRadius = '8px 8px 0px 8px';
                         this.style.padding = '8px 15px';
@@ -1822,14 +1815,14 @@ function showEasterEgg(text) {
                 });
             });
             
-            // Add hover effects to experience subtitles
+        
             const experienceSubtitles = document.querySelectorAll('.experience-subtitle');
             experienceSubtitles.forEach(subtitle => {
                 const prevElement = subtitle.previousElementSibling;
                 
                 subtitle.addEventListener('mouseenter', function() {
                     if (prevElement && prevElement.classList.contains('experience-item')) {
-                        // Create unified background for title and subtitle
+
                         prevElement.style.background = 'rgba(255, 255, 255, 0.05)';
                         prevElement.style.borderRadius = '8px 8px 0px 8px';
                         prevElement.style.padding = '8px 15px';
@@ -1858,7 +1851,7 @@ function showEasterEgg(text) {
             });
         });
         
-        // Recreate particles on window resize
+    
         window.addEventListener('resize', () => {
             const particlesContainer = document.getElementById('particles');
             particlesContainer.innerHTML = '';
